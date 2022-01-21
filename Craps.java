@@ -31,6 +31,11 @@ public class Craps
         while (true)
         {
             //opening and rules
+            d1 = new Die();
+            d2 = new Die();
+            roll1 = d1.roll();
+            roll2 = d2.roll();
+            rollTotal = roll1 + roll2;
             System.out.println("Let's play Craps!");
             System.out.println("Would you like to know the rules? (y/n)");
             String rules = in.nextLine();
@@ -45,7 +50,7 @@ public class Craps
                 }
             
             //rolling first dice
-            System.out.println("Press [Enter] to roll the dice: ");
+            System.out.println("Press [Enter] to roll the dice...");
             in.nextLine();
             System.out.println("You rolled a " + roll1 + " and a " + roll2);
             int total = d1.roll() + d2.roll();
@@ -66,16 +71,16 @@ public class Craps
                 boolean keepPlaying = true;
                 while(keepPlaying)
                 {
-                    System.out.println("Your point is " + point + ". Match your point to win");
-                    System.out.println("Press [Enter] to roll the dice: ");
+                    System.out.println("Your point is " + point + " try to match your point to win");
+                    System.out.println("Press [Enter] to roll the dice...");
                     in.nextLine();
 
                     roll1 = d1.roll();
                     roll2 = d2.roll();
                     rollTotal = roll1 + roll2;
                     
-                    System.out.println("You rolled " + roll1 + " and " + roll2);
-                    System.out.println("The total is " + rollTotal);
+                    System.out.println("You rolled a " + roll1 + " and a " + roll2);
+                    System.out.println("for a total of " + rollTotal);
                     
 
                     if (rollTotal == point)
@@ -85,11 +90,10 @@ public class Craps
                     }
                     else if (rollTotal == 7)
                     {
-                        System.out.println("Your rolled a 7. You lost.");
+                        System.out.println("Your rolled a 7. You lose!");
                         keepPlaying = false;
                     }
                 }
-                
                 
             }
             //end of game; ask if they want to play again
