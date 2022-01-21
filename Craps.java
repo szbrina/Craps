@@ -89,8 +89,11 @@ public class Craps
                         keepPlaying = false;
                     }
                 }
-                //ending of game and if they want to play again
-                System.out.println("Do you want to play again? (y/n)");
+                
+                
+            }
+            //end of game; ask if they want to play again
+            System.out.println("Do you want to play again? (y/n)");
                 String playAgain = in.nextLine();
                 if(playAgain.equals(""))
                 {
@@ -100,7 +103,6 @@ public class Craps
                 {
                     break;
                 }
-            }
         }
         System.out.println("Thanks for playing!");
     }
