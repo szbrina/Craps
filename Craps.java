@@ -54,8 +54,8 @@ public class Craps
             in.nextLine();
             System.out.println("You rolled a " + roll1 + " and a " + roll2);
             int total = d1.roll() + d2.roll();
-            System.out.println("for a total of " + rollTotal);
-            //first automatic outcomes
+            System.out.println("Your total is " + rollTotal);
+            //specific numbers rolled, end game --> results
             if(rollTotal == 7 || rollTotal == 11)
             {
                 System.out.println("You won!");
@@ -66,12 +66,12 @@ public class Craps
             }
             else
             {
-                int point = rollTotal;
+                int points = rollTotal;
                 //continuation of the game if they do not automatically win or lose
                 boolean keepPlaying = true;
                 while(keepPlaying)
                 {
-                    System.out.println("Your point is " + point + " try to match your point to win");
+                    System.out.println("Your points are " + points + ". Match your point to win!");
                     System.out.println("Press [Enter] to roll the dice...");
                     in.nextLine();
 
@@ -80,12 +80,12 @@ public class Craps
                     rollTotal = roll1 + roll2;
                     
                     System.out.println("You rolled a " + roll1 + " and a " + roll2);
-                    System.out.println("for a total of " + rollTotal);
+                    System.out.println("Your total is " + rollTotal);
                     
 
-                    if (rollTotal == point)
+                    if (rollTotal == points)
                     {
-                        System.out.println("You matched your point. You win!");
+                        System.out.println("It's a match. You win!");
                         keepPlaying = false;
                     }
                     else if (rollTotal == 7)
